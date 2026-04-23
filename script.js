@@ -56,3 +56,37 @@ const chartObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 if(document.querySelector('.chart-box')) chartObserver.observe(document.querySelector('.chart-box'));
+
+
+// ====== SYSTEM ARCHIVE PANEL LOGIC ======
+const openBtn = document.getElementById('open-panel-btn');
+const closeBtn = document.getElementById('close-panel-btn');
+const sidePanel = document.getElementById('project-panel');
+const panelOverlay = document.getElementById('panel-overlay');
+
+// Open Panel
+openBtn.addEventListener('click', () => {
+    sidePanel.classList.add('active');
+    panelOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevents background scrolling
+});
+
+// Close Panel function
+const closePanel = () => {
+    sidePanel.classList.remove('active');
+    panelOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restores scrolling
+};
+
+// Close when clicking the 'X' button
+closeBtn.addEventListener('click', closePanel);
+
+// Close when clicking outside the panel (on the overlay)
+panelOverlay.addEventListener('click', closePanel);
+
+// Close when pressing the Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidePanel.classList.contains('active')) {
+        closePanel();
+    }
+});
