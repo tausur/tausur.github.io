@@ -39,7 +39,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 
 /* Global Section */
 .section { padding: 9rem 0; border-bottom: 1px solid var(--border); }
-.section-tag { font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; margin-bottom: 4rem; font-weight: 600; }
+.section-tag { font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; margin-bottom: 4rem; font-weight: 600; }
 .dark-bg { background: var(--card); }
 
 /* Hero */
