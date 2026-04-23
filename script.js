@@ -1,47 +1,58 @@
-// Theme Toggle Logic
-const themeBtn = document.getElementById("theme-toggle");
-const icon = themeBtn.querySelector("i");
+// Optimized Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
+const themeIcon = themeToggle.querySelector('i');
 
-themeBtn.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-    const isLight = body.classList.contains("light-mode");
-    
-    // Switch icon
-    icon.classList.toggle("fa-moon");
-    icon.classList.toggle("fa-sun");
-    
-    // Save preference
-    localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
-});
-
-// Scroll Reveal Observer
-const reveals = document.querySelectorAll(".reveal");
-
-const observerOptions = {
-    threshold: 0.15
+const setTheme = (isDark) => {
+    if (isDark) {
+        body.classList.replace('light-theme', 'dark-theme');
+        themeIcon.className = 'fa-solid fa-sun';
+        localStorage.setItem('theme', 'dark-theme');
+    } else {
+        body.classList.replace('dark-theme', 'light-theme');
+        themeIcon.className = 'fa-solid fa-moon';
+        localStorage.setItem('theme', 'light-theme');
+    }
 };
 
-const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            // Optionally unobserve to only run animation once
-            observer.unobserve(entry.target);
+// Initial Load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark-theme') setTheme(true);
+
+themeToggle.addEventListener('click', () => {
+    setTheme(body.classList.contains('light-theme'));
+});
+
+// Advanced Chart Logic
+const segments = document.querySelectorAll('.segment');
+const legend = document.getElementById('chart-legend');
+const chartColors = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)'];
+
+const drawChart = () => {
+    let offset = 0;
+    segments.forEach((seg, i) => {
+        const val = parseInt(seg.dataset.val);
+        const lab = seg.dataset.label;
+        
+        seg.style.stroke = chartColors[i];
+        seg.style.strokeDasharray = `${val} 100`;
+        seg.style.strokeDashoffset = -offset;
+        
+        if(legend.children.length < segments.length) {
+            const item = document.createElement('div');
+            item.className = 'leg-item';
+            item.innerHTML = `<span class="leg-dot" style="background:${chartColors[i]}"></span><span>${lab}</span><span style="margin-left:auto; opacity:0.5">${val}%</span>`;
+            legend.appendChild(item);
         }
+        offset += val;
     });
-}, observerOptions);
+};
 
-reveals.forEach(reveal => {
-    revealObserver.observe(reveal);
-});
-
-// Initial Load Setup
-document.addEventListener("DOMContentLoaded", () => {
-    // Check saved theme
-    if (localStorage.getItem("portfolio-theme") === "light") {
-        body.classList.add("light-mode");
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
+const chartObserver = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting) {
+        drawChart();
+        chartObserver.unobserve(entries[0].target);
     }
-});
+}, { threshold: 0.5 });
+
+if(document.querySelector('.chart-box')) chartObserver.observe(document.querySelector('.chart-box'));

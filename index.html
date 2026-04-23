@@ -1,136 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tausur Rahaman | AI Engineer & Systems Architect</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,500&family=Fira+Code&display=swap" rel="stylesheet">
-    
+    <title>Tausur Rahaman | Systems Engineer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
-    <div class="noise-overlay"></div>
 
-    <nav class="main-nav">
+<body class="light-theme">
+    <div class="scanline"></div>
+
+    <nav class="glass-nav">
         <div class="nav-container">
-            <div class="logo">T.Rahaman</div>
+            <div class="logo">TR<span>.SYS</span></div>
             <div class="nav-links">
-                <a href="#about">Profile</a>
-                <a href="#projects">Work</a>
-                <a href="#contact">Contact</a>
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+                <a href="#about">About</a>
+                <a href="#work">Projects</a>
+                <a href="#blog">Blog</a>
+                <button id="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
             </div>
         </div>
     </nav>
 
-    <main class="content-wrapper">
-        <section id="hero" class="hero">
-            <div class="container hero-content">
-                <div class="badge fade-in">Available for specialized engineering</div>
-                <h1 class="hero-title fade-in delay-1">
-                    Building <span class="accent">Intelligent</span> Systems through Low-Level <span class="italic">Logic</span>.
-                </h1>
-                <p class="hero-subtitle fade-in delay-2">
-                    Dhaka-based AI Engineer. Specializing in C++, Python, and DSP. 
-                    Merging software efficiency with robotics innovation.
-                </p>
-                <div class="hero-actions fade-in delay-3">
-                    <a href="#projects" class="btn-primary">Explore My Work</a>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="live-status">
+                <div class="radar">
+                    <div class="radar-pulse"></div>
+                    <div class="radar-dot"></div>
                 </div>
+                <span>SYSTEM_READY: AVAILABLE_FOR_DEV</span>
             </div>
-        </section>
+            <h1 class="hero-title">TAUSUR RAHAMAN</h1>
+            <h2 class="sub-heading">Architecting <span class="glow">Low-Level</span> Intelligence</h2>
+            <p class="hero-bio">Specializing in C++, Python, and DSP. Bridging hardware logic with software
+                intelligence.</p>
+            <div class="hero-actions">
+                <a href="#work" class="btn-primary">EXPLORE_PROJECTS</a>
+                <a href="mailto:tausur@sys.io" class="btn-secondary">CONTACT_ME</a>
+            </div>
+        </div>
+    </header>
 
-        <section id="about" class="section reveal">
-            <div class="container">
-                <div class="section-grid">
-                    <div class="section-label">01. Profile</div>
-                    <div class="about-content">
-                        <p class="large-text">I bridge the gap between high-level intelligence and hardware performance.</p>
-                        <p>My work is focused on the architectural elegance of code. I develop efficient algorithms for robotics and signal processing, ensuring systems run optimally at the core level.</p>
-                        <p>A strong academic foundation from Comilla Zilla School and Notre Dame College guides my rigorous approach to problem-solving.</p>
-                    </div>
+    <section id="about" class="section">
+        <div class="container split-layout">
+            <div class="edu-timeline">
+                <div class="section-tag">EDUCATION_LOG</div>
+                <div class="timeline-item">
+                    <span class="year">2026</span>
+                    <h3>Notre Dame College</h3>
+                    <p>HSC Candidate | Adv. Physics & Math</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2024</span>
+                    <h3>Comilla Zilla School</h3>
+                    <p>SSC Graduate | Logic Foundation</p>
                 </div>
             </div>
-        </section>
+            <div class="profile-desc">
+                <div class="section-tag">PROFILE_DESC</div>
+                <p class="lead">I build performance-critical systems.</p>
+                <p>Developing efficient algorithms for robotics and signal processing. My background at NDC fuels my
+                    analytical approach to solving complex engineering problems.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="stack" class="section reveal">
-            <div class="container">
-                <div class="stack-grid">
-                    <div class="edu-column">
-                        <div class="stack-card">
-                            <h3>Notre Dame College</h3>
-                            <p class="mono">Higher Secondary Certificate</p>
-                            <p>Advanced Mathematics & Physics focus.</p>
-                        </div>
-                        <div class="stack-card">
-                            <h3>Comilla Zilla School</h3>
-                            <p class="mono">Secondary School Certificate</p>
-                            <p>Foundational logic and computer science start.</p>
-                        </div>
-                    </div>
-                    <div class="skills-column">
-                        <div class="section-label align-right">System_Stack</div>
-                        <div class="skill-tags">
-                            <span>C++</span>
-                            <span>Python</span>
-                            <span>DSP Logic</span>
-                            <span>Neural Nets</span>
-                            <span>Linux Systems</span>
-                        </div>
-                    </div>
+    <section id="stack" class="section dark-bg">
+        <div class="container chart-section">
+            <div class="section-tag">TECH_CORE_DISTRIBUTION</div>
+            <div class="chart-wrapper">
+                <div class="chart-box">
+                    <svg viewBox="0 0 42 42" class="main-chart">
+                        <circle class="ring" cx="21" cy="21" r="15.915"></circle>
+                        <circle class="segment seg-1" data-val="40" data-label="C++ / Low-Level" cx="21" cy="21"
+                            r="15.915"></circle>
+                        <circle class="segment seg-2" data-val="30" data-label="Python / AI" cx="21" cy="21" r="15.915">
+                        </circle>
+                        <circle class="segment seg-3" data-val="15" data-label="DSP Logic" cx="21" cy="21" r="15.915">
+                        </circle>
+                        <circle class="segment seg-4" data-val="15" data-label="Systems Arch" cx="21" cy="21"
+                            r="15.915"></circle>
+                    </svg>
+                    <div class="chart-overlay"><span class="mono">CORE</span><span class="small">v4.3</span></div>
                 </div>
+                <div class="legend-grid" id="chart-legend"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects" class="section reveal">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-label">02. Works</div>
-                    <h2>Selected Projects</h2>
-                </div>
-                <div class="project-list">
-                    <div class="project-item">
-                        <div class="p-info">
-                            <h3>DSP Simulation Logic</h3>
-                            <p>High-fidelity signal processing simulation engine optimized for robotics hardware integration.</p>
-                            <div class="p-tags"><span>C++</span> <span>DSP</span> <span>Robotics</span></div>
-                        </div>
-                        <div class="p-link"><a href="#">View Repository <i class="fa-solid fa-arrow-right-long"></i></a></div>
-                    </div>
-                    <div class="project-item">
-                        <div class="p-info">
-                            <h3>Neural Core</h3>
-                            <p>A minimalist neural network architecture implemented in C++, focused on raw efficiency and predictability.</p>
-                            <div class="p-tags"><span>C++</span> <span>AI</span> <span>Optimization</span></div>
-                        </div>
-                        <div class="p-link"><a href="#">View Repository <i class="fa-solid fa-arrow-right-long"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section id="work" class="section">
+        <div class="container">
+            <div class="section-tag">DEPLOYED_WORKS / BENTO_GRID</div>
+            <div class="work-grid">
 
-    <footer id="contact" class="footer">
-        <div class="container footer-content">
-            <div class="footer-cta">
-                <h2>Ready to collaborate?</h2>
-                <a href="mailto:tausur@sys.io" class="huge-email">tausur@sys.io</a>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                <div class="work-item feature">
+                    <div class="work-info">
+                        <div class="work-head">
+                            <span class="mono">0x01 / PRIMARY</span>
+                            <i class="fa-solid fa-wave-square"></i>
+                        </div>
+                        <h3>DSP Simulation Engine</h3>
+                        <p>A high-performance C++ engine designed for real-time digital signal processing in robotic
+                            environments. Focused on low-latency data throughput and hardware-level optimization.</p>
+                        <div class="work-footer">
+                            <div class="tags">
+                                <span class="tag">C++20</span>
+                                <span class="tag">Robotics</span>
+                                <span class="tag">DSP</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="p-link"><i class="fa-brands fa-github"></i> Code</a>
+                                <a href="#" class="p-link"><i class="fa-solid fa-bolt"></i> Live</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p>&copy; 2026 Tausur Rahaman. Dhaka, Bangladesh. Optimized for performance.</p>
+
+                <div class="work-item">
+                    <div class="work-info">
+                        <div class="work-head">
+                            <span class="mono">0x02</span>
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <h3>Texela SaaS</h3>
+                        <p>Image-to-PDF utility with parallel processing and secure Tor-routed transfers.</p>
+                        <div class="work-footer">
+                            <div class="work-links">
+                                <a href="#" class="p-icon-btn"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="p-icon-btn"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section dark-bg">
+        <div class="container">
+            <div class="section-tag">LOG_RECORDS / JOURNAL</div>
+            <div class="blog-grid">
+                <a href="#" class="blog-entry">
+                    <div class="blog-meta">
+                        <span class="mono">Entry_01</span>
+                        <span class="date">2026.04.20</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Low-Level Optimization in Modern Robotics</h3>
+                        <p>A technical dive into memory management using C++20 for real-time DSP systems.</p>
+                        <span class="read-more">Read Full Analysis <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </a>
+                <a href="#" class="blog-entry">
+                    <div class="blog-meta">
+                        <span class="mono">Entry_02</span>
+                        <span class="date">2026.03.12</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Engineering Efficiency with Arch Linux</h3>
+                        <p>How a custom kernel and tiling window managers boost productivity for systems engineers.</p>
+                        <span class="read-more">Read Full Analysis <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="industrial-footer">
+        <div class="container footer-flex">
+            <div class="f-left">
+                <h2 class="mono">CONNECT_STATION</h2>
+                <a href="mailto:tausur@sys.io" class="email-btn">tausur@sys.io</a>
+            </div>
+            <div class="f-right">
+                <div class="social-box">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <p class="mono opacity-50">© 2026 Tausur Rahaman. BUET Aspirant.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
