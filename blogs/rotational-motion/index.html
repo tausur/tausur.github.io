@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rotational Motion masterclass in Bengali - Engineering perspective on dynamics and logic gaps.">
+    <title>Rotational Intelligence | TR.SYS</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Hind+Siliguri:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg: #fdfdfd; --card: #ffffff; --text: #0e0e10; --text-dim: #404045;
+            --accent: #00791e; --border: rgba(0, 0, 0, 0.1); --highlight-bg: #f0fdf4;
+            scroll-behavior: smooth;
+        }
+        .dark-theme {
+            --bg: #050505; --card: #0d0d0f; --text: #e8e8ed; --text-dim: #909098;
+            --accent: #00ff9d; --border: rgba(255, 255, 255, 0.08); --highlight-bg: #0a1a12;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); color: var(--text); 
+            font-family: 'Hind Siliguri', 'Inter', sans-serif; 
+            line-height: 1.8; transition: 0.3s;
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 15px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(12px); background: rgba(var(--bg), 0.8); z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* 70/30 PC Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            max-width: 1300px;
+            margin: 120px auto;
+            padding: 0 40px;
+            gap: 60px;
+        }
+
+        .mono, .formula-box, .theme-toggle, .meta-info {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            font-weight: 800;
+        }
+
+        h1 { font-size: 3.5rem; letter-spacing: -2px; line-height: 1.1; margin-bottom: 10px; }
+        
+        .meta-info {
+            display: flex; gap: 20px; font-size: 0.85rem; color: var(--text-dim);
+            margin-bottom: 30px;
+        }
+
+        .hero-img { width: 100%; border-radius: 12px; margin: 30px 0; border: 1px solid var(--border); }
+
+        .blog-body h2 { font-size: 2rem; margin: 50px 0 20px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+        .formula-box { 
+            background: var(--card); border: 1px solid var(--border); padding: 25px; 
+            border-radius: 8px; margin: 25px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .logic-gap {
+            background: var(--highlight-bg); border-left: 5px solid #ff4d4d;
+            padding: 25px; margin: 35px 0; border-radius: 8px;
+        }
+        .logic-gap h4 { color: #ff4d4d; margin-bottom: 12px; font-size: 1.2rem; font-weight: 700; }
+
+        /* Sidebar Styling */
+        .sidebar { position: sticky; top: 100px; height: fit-content; }
+        .toc-box { background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 12px; }
+        .toc-title { font-weight: 800; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; color: var(--accent); }
+        .toc { list-style: none; }
+        .toc a { text-decoration: none; color: var(--text-dim); font-size: 0.95rem; display: block; margin-bottom: 15px; transition: 0.2s; border-left: 2px solid transparent; padding-left: 15px; }
+        .toc a:hover { color: var(--accent); border-left: 2px solid var(--accent); }
+
+        .theme-toggle {
+            background: var(--card); border: 1px solid var(--border); color: var(--text);
+            padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.8rem;
+        }
+
+        @media (max-width: 1000px) {
+            .main-layout { grid-template-columns: 1fr; margin: 100px auto; padding: 0 20px; }
+            .sidebar { display: none; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+
+    <nav>
+        <a href="../../index.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">TR<span>.SYS</span></div>
+        </a>
+        <button class="theme-toggle" id="themeBtn">THEME_SWITCH</button>
+    </nav>
+
+    <div class="main-layout">
+        <article class="blog-body">
+            <h1>Rotational Motion: Common Logic Gaps & Solving Mastery</h1>
+            
+            <div class="meta-info">
+                <span><i class="fa-regular fa-user"></i> Tausur Rahaman</span>
+                <span><i class="fa-regular fa-calendar"></i> April 26, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 8 Min Read</span>
+            </div>
+            
+            <img src="/blogs/rotational-motion/rotational_motion.jpeg" class="hero-img" alt="Rotational Physics Visualization">
+
+            <p>Rotational motion physics-er emon ekta area jekhane linear logic diye solve korte gele amra aksar vul kori. Ekhane shudhu formula mukhosto korlei hoy na, borong <b>Spatial Reasoning</b> dorkar hoy. Amra ekhane core logic gaps gula highlight korbo ebong dekhibe kivabe complicated problems break-down korte hoy.</p>
+
+            <h2 id="pivot">১. Pivot Choice Strategy (সঠিক বিন্দু নির্বাচন)</h2>
+            <p>যেকোনো rotational problem-এর প্রথম ধাপ হলো Axis of Rotation সিলেক্ট করা। আমরা বড় ভুল করি যখন আমরা চোখ বন্ধ করে জ্যামিতিক কেন্দ্র বা Center of Mass (COM) কে পিভট ধরি।</p>
+            
+            
+            
+            <div class="logic-gap">
+                <h4>⚠️ Logic Gap: পিভট সিলেকশনে ভুল</h4>
+                <p>অনেক সময় প্রবলেমে এমন কিছু অজানা বল (যেমন হিল বা কব্জার বল) থাকে যা আমরা জানি না। যদি আমরা পিভট পয়েন্ট ঠিক ওই বিন্দুর ওপর ধরি, তবে ওই বলের টর্ক ০ হয়ে যায়। ইকুয়েশনে অজানা চলক কমে যাওয়া মানে ম্যাথ সলভ করা ২ গুণ সহজ হয়ে যাওয়া।</p>
+            </div>
+
+            <h2 id="inertia">২. Moment of Inertia (সিস্টেমের জড়তা)</h2>
+            <p>ইনার্শিয়া মানে হলো একটি বস্তু তার ঘূর্ণন অবস্থা পরিবর্তন করতে কতটা বাধা দেয়। এটি শুধু ভরের ওপর নয়, ভরের বিন্যাসের ওপরও নির্ভর করে।</p>
+            
+            <div class="formula-box">
+                // Fundamental Formula <br>
+                I = Σ mᵢrᵢ² <br><br>
+                // Parallel Axis Theorem <br>
+                I = I_cm + Md²
+            </div>
+
+            <h2 id="energy">৩. Energy in Rolling: ডাবল অ্যাকশন</h2>
+            <p>একটি গড়িয়ে চলা বস্তু একই সাথে সামনে যাচ্ছে (Translational) এবং ঘুরছে (Rotational)। তাই মোট শক্তি হবে এই দুইটির যোগফল।</p>
+            
+            
+
+            <div class="logic-gap">
+                <h4>⚠️ Conceptual Lack: স্ট্যাটিক ফ্রিকশন কি শক্তি নষ্ট করে?</h4>
+                <p>Pure rolling-এর সময় ঘর্ষণ থাকা সত্ত্বেও শক্তি সংরক্ষিত থাকে কারণ স্ট্যাটিক ফ্রিকশন কোনো "কাজ" (Work) করে না। এটি স্টুডেন্টদের মধ্যে বড় একটি কনফিউশন যে ঘর্ষণ থাকলে শক্তি সংরক্ষণ সূত্র খাটবে কি না।</p>
+            </div>
+
+            <h2 id="problem">৪. প্র্যাকটিক্যাল প্রবলেম সলভিং</h2>
+            <p><b>প্রশ্ন:</b> একটি নিরেট গোলক (Solid Sphere) h উচ্চতার একটি আনত তল থেকে নিচে গড়িয়ে পড়ছে। নিচে পৌঁছালে তার বেগ কত হবে?</p>
+            
+            <div class="formula-box" style="background: var(--highlight-bg);">
+                <strong>ধাপ ১: শক্তি শনাক্তকরণ</strong> <br>
+                আদি শক্তি: Mgh (বিভব শক্তি) <br>
+                শেষ শক্তি: (1/2)Mv² + (1/2)Iω² (গতিশক্তি) <br><br>
+
+                <strong>ধাপ ২: শর্ত প্রয়োগ</strong> <br>
+                যেহেতু pure rolling, তাই v = ωR বা ω = v/R। <br><br>
+
+                <strong>ধাপ ৩: মান বসানো</strong> <br>
+                নিরেট গোলকের জন্য I = (2/5)MR² <br>
+                Mgh = (1/2)Mv² + (1/2)(2/5)MR²(v/R)² <br>
+                Mgh = (1/2)Mv² + (1/5)Mv² = (7/10)Mv² <br><br>
+
+                <strong>ফাইনাল রেজাল্ট:</strong> v = √(10gh/7)
+            </div>
+
+            <p>এখানে দেখো, যদি তুমি ঘূর্ণন গতিশক্তি ইগনোর করতে, তবে উত্তর আসত v = √2gh, যা ভুল। ফিজিক্সে প্রতিটি রোটেশন এক একটি আলাদা এনার্জি রিজার্ভয়ার।</p>
+
+            <h2 id="summary">ফাইনাল চেকলিস্ট</h2>
+            <ul style="padding-left: 20px; color: var(--text-dim); margin-top: 20px;">
+                <li>ফোর্স ডিরেকশন বের করার জন্য রাইট-হ্যান্ড রুল ব্যবহার করো।</li>
+                <li>পিভট পয়েন্ট নির্বাচনে অলসতা করো না।</li>
+                <li>এনার্জি ইকুয়েশনে রৈখিক এবং কৌণিক উভয় গতিশক্তিই যোগ করো।</li>
+            </ul>
+        </article>
+
+        <aside class="sidebar">
+            <div class="toc-box">
+                <div class="toc-title">সূচিপত্র</div>
+                <ul class="toc">
+                    <li><a href="#pivot">০১. পিভট নির্বাচন</a></li>
+                    <li><a href="#inertia">০২. জড়তার ভ্রামক</a></li>
+                    <li><a href="#energy">০৩. শক্তির সংরক্ষণ</a></li>
+                    <li><a href="#problem">০৪. ম্যাথ ইমপ্লিমেন্টেশন</a></li>
+                    <li><a href="#summary">০৫. সারসংক্ষেপ</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        const btn = document.getElementById('themeBtn');
+        const body = document.body;
+        btn.onclick = () => {
+            body.classList.toggle('dark-theme');
+            btn.innerText = body.classList.contains('dark-theme') ? 'LIGHT_MODE' : 'DARK_MODE';
+        };
+    </script>
+</body>
+</html>
